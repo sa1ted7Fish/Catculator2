@@ -1,47 +1,46 @@
 <template>
   <el-container>
-    <el-aside width="200px">Aside</el-aside>
+    <el-aside width="60px"><SideBar></SideBar></el-aside>
     <el-container style="min-height: 100vh">
-      <el-header>Header</el-header>
-      <el-main>Main
-
+      <el-header><Header></Header></el-header>
+      <el-main>
+        <router-view></router-view>
       </el-main>
-      <el-footer>Catculator2 ©2021 Created by TJSDD</el-footer>
     </el-container>
   </el-container>
 </template>
 
 <script>
-export default {
+import SideBar from "@/components/SideBar";
+import Header from "@/components/Header";
 
+export default {
+  name: "Index",
+  components: {
+    SideBar,
+    Header,
+  },
 };
 </script>
 
 <style scoped>
 .el-header, .el-footer {
-  background-color: #B3C0D1;
-  color: #333;
-  text-align: center;
-  line-height: 60px;
-  margin-left: 200px;
+  margin-left: 60px;
+  padding: 0;
 }
 
 .el-aside {
-  background-color: #D3DCE6;
-  color: #333;
   text-align: center;
-  line-height: 200px;
   height: 100vh;
   position: fixed;
-  overflow: auto;
+  overflow: hidden;
+  box-shadow: 0 0 5px 2px #DDDDDD;
 }
 
 .el-main {
-  background-color: #E9EEF3;
-  color: #333;
-  text-align: center;
-  line-height: 160px;
-  margin-left: 200px;
+  background-color: #ffffff;
+  margin-left: 60px;
+  padding: 0;
 }
 
 </style>

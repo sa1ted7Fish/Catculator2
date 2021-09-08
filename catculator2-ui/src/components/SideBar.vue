@@ -1,79 +1,98 @@
 <template>
-  <div style="width: 256px">
-    <a-button type="primary" style="margin-bottom: 16px" @click="toggleCollapsed">
-      <a-icon :type="collapsed ? 'menu-unfold' : 'menu-fold'" />
-    </a-button>
-    <a-menu
-        :default-selected-keys="['1']"
-        :default-open-keys="['sub1']"
-        mode="inline"
-        theme="dark"
-        :inline-collapsed="collapsed"
-    >
-      <a-menu-item key="1">
-        <a-icon type="pie-chart" />
-        <span>Option 1</span>
-      </a-menu-item>
-      <a-menu-item key="2">
-        <a-icon type="desktop" />
-        <span>Option 2</span>
-      </a-menu-item>
-      <a-menu-item key="3">
-        <a-icon type="inbox" />
-        <span>Option 3</span>
-      </a-menu-item>
-      <a-sub-menu key="sub1">
-        <span slot="title"><a-icon type="mail" /><span>Navigation One</span></span>
-        <a-menu-item key="5">
-          Option 5
-        </a-menu-item>
-        <a-menu-item key="6">
-          Option 6
-        </a-menu-item>
-        <a-menu-item key="7">
-          Option 7
-        </a-menu-item>
-        <a-menu-item key="8">
-          Option 8
-        </a-menu-item>
-      </a-sub-menu>
-      <a-sub-menu key="sub2">
-        <span slot="title"><a-icon type="appstore" /><span>Navigation Two</span></span>
-        <a-menu-item key="9">
-          Option 9
-        </a-menu-item>
-        <a-menu-item key="10">
-          Option 10
-        </a-menu-item>
-        <a-sub-menu key="sub3" title="Submenu">
-          <a-menu-item key="11">
-            Option 11
-          </a-menu-item>
-          <a-menu-item key="12">
-            Option 12
-          </a-menu-item>
-        </a-sub-menu>
-      </a-sub-menu>
-    </a-menu>
+  <div class="menu">
+    <div class="logo">
+      <el-image
+          style="width: 50px; height: 50px"
+          src="https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg"
+          fit="cover">
+      </el-image>
+    </div>
+
+    <el-tooltip class="item" effect="dark" content="首页" placement="right">
+      <div class="menu-item menu-item-1" @click="toHome()">
+        <div class="menu-item-icon"><font-awesome-icon :icon="['fas', 'home']" /></div>
+      </div>
+    </el-tooltip>
+
+    <el-tooltip class="item" effect="dark" content="物品列表" placement="right">
+      <div class="menu-item menu-item-2">
+        <div class="menu-item-icon"><font-awesome-icon :icon="['fas', 'money-check']" /></div>
+      </div>
+    </el-tooltip>
+
+    <el-tooltip class="item" effect="dark" content="消费统计" placement="right">
+      <div class="menu-item menu-item-3">
+        <div class="menu-item-icon"><font-awesome-icon :icon="['fas', 'chart-line']" /></div>
+      </div>
+    </el-tooltip>
+
+    <el-tooltip class="item" effect="dark" content="设置" placement="right">
+      <div class="menu-item menu-item-4">
+        <div class="menu-item-icon"><font-awesome-icon :icon="['fas', 'cog']" /></div>
+      </div>
+    </el-tooltip>
+
+    <el-tooltip class="item" effect="dark" content="关于" placement="right">
+      <div class="menu-item menu-item-5">
+        <div class="menu-item-icon"><font-awesome-icon :icon="['fas', 'info']" /></div>
+      </div>
+    </el-tooltip>
+
+    <el-tooltip class="item" effect="dark" content="退出" placement="right">
+      <div class="menu-item menu-item-exit">
+        <div class="menu-item-icon"><font-awesome-icon :icon="['fas', 'sign-out-alt']" /></div>
+      </div>
+    </el-tooltip>
+
   </div>
 </template>
 
 <script>
 export default {
   name: "SideBar",
-  data() {
-    return {
-      collapsed: false,
-    };
-  },
   methods: {
-    toggleCollapsed() {
-      this.collapsed = !this.collapsed;
-    },
-  },
+    toHome() {
+      this.$router.push({path: "/home"})
+    }
+  }
 }
 </script>
 
 <style scoped>
+
+.logo {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+}
+
+.menu-item {
+  width: 60px;
+  height: 60px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.menu-item-1 {
+  margin-top: calc(50vh - 260px);
+}
+
+.menu-item-exit {
+  position: absolute;
+  bottom: 10px;
+}
+
+.menu-item-icon {
+  line-height: 40px;
+  font-size: 20px;
+  color: #ADB5BD;
+}
+
+.menu-item-icon:hover {
+  color: #333333;
+  border-left: 5px solid #48CAE4;
+  background: #CAF0F8;
+}
 
 </style>
