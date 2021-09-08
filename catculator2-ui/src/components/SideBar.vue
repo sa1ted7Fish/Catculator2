@@ -3,42 +3,42 @@
     <div class="logo">
       <el-image
           style="width: 50px; height: 50px"
-          src="https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg"
+          :src="require('@/assets/logo.png')"
           fit="cover">
       </el-image>
     </div>
 
-    <el-tooltip class="item" effect="dark" content="首页" placement="right">
+    <el-tooltip class="item" effect="dark" content="首页" placement="right-start">
       <div class="menu-item menu-item-1" @click="toHome()">
         <div class="menu-item-icon"><font-awesome-icon :icon="['fas', 'home']" /></div>
       </div>
     </el-tooltip>
 
-    <el-tooltip class="item" effect="dark" content="物品列表" placement="right">
+    <el-tooltip class="item" effect="dark" content="物品列表" placement="right-start">
       <div class="menu-item menu-item-2">
         <div class="menu-item-icon"><font-awesome-icon :icon="['fas', 'money-check']" /></div>
       </div>
     </el-tooltip>
 
-    <el-tooltip class="item" effect="dark" content="消费统计" placement="right">
+    <el-tooltip class="item" effect="dark" content="消费统计" placement="right-start">
       <div class="menu-item menu-item-3">
         <div class="menu-item-icon"><font-awesome-icon :icon="['fas', 'chart-line']" /></div>
       </div>
     </el-tooltip>
 
-    <el-tooltip class="item" effect="dark" content="设置" placement="right">
+    <el-tooltip class="item" effect="dark" content="设置" placement="right-start">
       <div class="menu-item menu-item-4">
         <div class="menu-item-icon"><font-awesome-icon :icon="['fas', 'cog']" /></div>
       </div>
     </el-tooltip>
 
-    <el-tooltip class="item" effect="dark" content="关于" placement="right">
+    <el-tooltip class="item" effect="dark" content="关于" placement="right-start">
       <div class="menu-item menu-item-5">
         <div class="menu-item-icon"><font-awesome-icon :icon="['fas', 'info']" /></div>
       </div>
     </el-tooltip>
 
-    <el-tooltip class="item" effect="dark" content="退出" placement="right">
+    <el-tooltip class="item" effect="dark" content="退出" placement="right-start">
       <div class="menu-item menu-item-exit">
         <div class="menu-item-icon"><font-awesome-icon :icon="['fas', 'sign-out-alt']" /></div>
       </div>

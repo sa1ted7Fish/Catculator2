@@ -4,6 +4,7 @@ import router from './router'
 import store from './store'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+import '@/assets/css/fonts.css'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {
     faHome,
@@ -12,6 +13,9 @@ import {
     faCog,
     faSignOutAlt,
     faInfo,
+    faYenSign,
+    faCalendarCheck,
+    faPercent
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
@@ -22,6 +26,9 @@ library.add(
     faCog,
     faSignOutAlt,
     faInfo,
+    faYenSign,
+    faCalendarCheck,
+    faPercent
 )
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
