@@ -11,17 +11,17 @@
           <el-row>
             <el-col :span="8">
               <el-tooltip class="item" effect="dark" content="物品清单" placement="bottom">
-                <i class="el-icon-tickets" @click="toGds()"></i>
+                <i class="el-icon-box" @click="toGds()"></i>
               </el-tooltip>
             </el-col>
             <el-col :span="8">
-              <el-tooltip class="item" effect="dark" content="消费统计" placement="bottom">
-                <i class="el-icon-pie-chart" @click="toStat()"></i>
+              <el-tooltip class="item" effect="dark" content="基本信息" placement="bottom">
+                <i class="el-icon-tickets" @click="toStat()"></i>
               </el-tooltip>
             </el-col>
             <el-col :span="8">
-              <el-tooltip class="item" effect="dark" content="待办事项" placement="bottom">
-                <i class="el-icon-finished" @click="toTodo()"></i>
+              <el-tooltip class="item" effect="dark" content="数据统计" placement="bottom">
+                <i class="el-icon-pie-chart" @click="toTodo()"></i>
               </el-tooltip>
             </el-col>
           </el-row>

@@ -25,7 +25,15 @@ const routes = [
       {
         path: '/stat',
         name: 'Statistics',
-        component: () => import('@/views/statistics/statistics')
+        component: () => import('@/views/statistics/statistics'),
+        children: [
+          {
+            path: '/',
+            components: {
+
+            }
+          }
+        ]
       }
     ]
   },
