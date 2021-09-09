@@ -17,6 +17,16 @@ const routes = [
         name: 'Home',
         component: Home
       },
+      {
+        path: '/gds',
+        name: 'Goods',
+        component: () => import('@/views/goods/goods')
+      },
+      {
+        path: '/stat',
+        name: 'Statistics',
+        component: () => import('@/views/statistics/statistics')
+      }
     ]
   },
   // {

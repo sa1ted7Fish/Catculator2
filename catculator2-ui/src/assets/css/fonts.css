@@ -2,3 +2,18 @@
     font-family: xkcd;
     src: url("../fonts/xkcd-script.ttf");
 }
+
+@font-face {
+    font-family: Eighty-Eight;
+    src: url("../fonts/Eighty-Eight.ttf");
+}
+
+@font-face {
+    font-family: Jungle-Hope;
+    src: url("../fonts/Jungle-Hope.ttf");
+}
+
+@font-face {
+    font-family: Isla de Tabarca;
+    src: url("../fonts/Isla de Tabarca.ttf");
+}

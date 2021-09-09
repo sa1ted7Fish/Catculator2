@@ -1,14 +1,45 @@
 <template>
   <div class="header">
     <el-row>
-      <el-col :span="1" :offset="1">
-        <div class="title">Ca<span style="color: orangered">t</span>culator2</div>
+      <el-col :span="4">
+        <div class="header-item header-item-title" @click="toHome()">
+          <span class="title">Catculator2</span>
+        </div>
       </el-col>
-
-      <el-col :span="2" :offset="20">
-       <div class="avatar">
-         <el-avatar src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"></el-avatar>
-       </div>
+      <el-col :span="6" :offset="5">
+        <div class="header-item header-item-nav">
+          <el-row>
+            <el-col :span="8">
+              <el-tooltip class="item" effect="dark" content="物品清单" placement="bottom">
+                <i class="el-icon-tickets" @click="toGds()"></i>
+              </el-tooltip>
+            </el-col>
+            <el-col :span="8">
+              <el-tooltip class="item" effect="dark" content="消费统计" placement="bottom">
+                <i class="el-icon-pie-chart" @click="toStat()"></i>
+              </el-tooltip>
+            </el-col>
+            <el-col :span="8">
+              <el-tooltip class="item" effect="dark" content="待办事项" placement="bottom">
+                <i class="el-icon-finished" @click="toTodo()"></i>
+              </el-tooltip>
+            </el-col>
+          </el-row>
+        </div>
+      </el-col>
+      <el-col :span="1" :offset="8">
+        <el-dropdown>
+          <span class="el-dropdown-link">
+            <div class="header-item header-item-more">
+              <i class="el-icon-more"></i>
+            </div>
+          </span>
+          <el-dropdown-menu slot="dropdown">
+            <el-dropdown-item>个人中心</el-dropdown-item>
+            <el-dropdown-item>关于</el-dropdown-item>
+            <el-dropdown-item divided>退出</el-dropdown-item>
+          </el-dropdown-menu>
+        </el-dropdown>
       </el-col>
     </el-row>
   </div>
@@ -16,7 +47,21 @@
 
 <script>
 export default {
-  name: "Header"
+  name: "Header",
+  methods: {
+    toHome() {
+      this.$router.push('/home')
+    },
+    toGds() {
+      this.$router.push('/gds')
+    },
+    toStat() {
+      this.$router.push('/stat')
+    },
+    toTodo() {
+
+    }
+  }
 }
 </script>
 
@@ -24,24 +69,28 @@ export default {
 .header {
   width: 100%;
   height: 60px;
-  background-color: #ffffff;
+}
+
+.header-item {
+  width: 100%;
+  height: 60px;
 }
 
 .title {
-  text-align: center;
-  height: 60px;
   line-height: 60px;
-  color: #333333;
-  font-weight: bold;
-  font-size: 20px;
+  font-size: 42px;
+  font-weight: bolder;
+  font-family: Eighty-Eight;
 }
 
-.avatar {
-  height: 60px;
+.header-item-nav, .header-item-more {
   line-height: 60px;
+  text-align: center;
+  font-size: 32px;
 }
-.el-avatar {
-  margin: 10px;
-  margin-left: 40px;
+
+.el-dropdown-link {
+  cursor: pointer;
 }
+
 </style>
