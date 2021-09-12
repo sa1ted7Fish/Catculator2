@@ -20,21 +20,28 @@ const routes = [
       {
         path: '/gds',
         name: 'Goods',
-        component: () => import('@/views/goods/goods')
-      },
-      {
-        path: '/stat',
-        name: 'Statistics',
-        component: () => import('@/views/statistics/statistics'),
+        component: () => import('@/views/goods/Goods.vue'),
         children: [
           {
             path: '/',
             components: {
-
+              unused: () => import('@/views/goods/Unused.vue'),
+              inUsing: () => import('@/views/goods/InUsing.vue'),
+              usedUp: () => import('@/views/goods/UsedUp.vue'),
             }
           }
         ]
-      }
+      },
+      {
+        path: '/sum',
+        name: 'Summaries',
+        component: () => import('@/views/summaries/Summaries.vue'),
+      },
+      {
+        path: '/stat',
+        name: 'Statistics',
+        component: () => import('@/views/statistics/Statistics.vue'),
+      },
     ]
   },
   // {

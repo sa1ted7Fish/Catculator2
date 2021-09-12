@@ -1,96 +1,112 @@
 <template>
   <div class="header">
-    <el-row>
-      <el-col :span="4">
-        <div class="header-item header-item-title" @click="toHome()">
-          <span class="title">Catculator2</span>
-        </div>
-      </el-col>
-      <el-col :span="6" :offset="5">
-        <div class="header-item header-item-nav">
-          <el-row>
-            <el-col :span="8">
-              <el-tooltip class="item" effect="dark" content="物品清单" placement="bottom">
-                <i class="el-icon-box" @click="toGds()"></i>
-              </el-tooltip>
-            </el-col>
-            <el-col :span="8">
-              <el-tooltip class="item" effect="dark" content="基本信息" placement="bottom">
-                <i class="el-icon-tickets" @click="toStat()"></i>
-              </el-tooltip>
-            </el-col>
-            <el-col :span="8">
-              <el-tooltip class="item" effect="dark" content="数据统计" placement="bottom">
-                <i class="el-icon-pie-chart" @click="toTodo()"></i>
-              </el-tooltip>
-            </el-col>
-          </el-row>
-        </div>
-      </el-col>
-      <el-col :span="1" :offset="8">
-        <el-dropdown>
-          <span class="el-dropdown-link">
-            <div class="header-item header-item-more">
-              <i class="el-icon-more"></i>
-            </div>
-          </span>
-          <el-dropdown-menu slot="dropdown">
-            <el-dropdown-item>个人中心</el-dropdown-item>
-            <el-dropdown-item>关于</el-dropdown-item>
-            <el-dropdown-item divided>退出</el-dropdown-item>
-          </el-dropdown-menu>
-        </el-dropdown>
-      </el-col>
-    </el-row>
+    <img class="logo"
+         :src="require('@/assets/logo.png')"
+          @click="toHome()">
+    <div class="personal">
+      <el-dropdown>
+        <span class="el-dropdown-link">
+           <i class="el-icon-more"></i>
+        </span>
+        <el-dropdown-menu slot="dropdown">
+          <el-dropdown-item>个人中心</el-dropdown-item>
+          <el-dropdown-item>关于</el-dropdown-item>
+          <el-dropdown-item divided>退出</el-dropdown-item>
+        </el-dropdown-menu>
+      </el-dropdown>
+    </div>
+
+    <el-menu
+        class="navbar"
+        mode="horizontal"
+        @select="handleSelect"
+        text-color="#242738"
+        active-text-color="#367bf0">
+        <el-menu-item v-for="item in menuItems" :index="item.index">
+          {{ item.name }}
+        </el-menu-item>
+    </el-menu>
   </div>
 </template>
 
 <script>
 export default {
   name: "Header",
-  methods: {
-    toHome() {
-      this.$router.push('/home')
-    },
-    toGds() {
-      this.$router.push('/gds')
-    },
-    toStat() {
-      this.$router.push('/stat')
-    },
-    toTodo() {
+  data() {
+    return {
+      menuItems: {
+        "goods": {
+          name: "物品清单",
+          index: "goods",
+          link: "/gds"
+        },
+        "summaries": {
+          name: "概要",
+          index: "summaries",
+          link: "/sum"
+        },
+        "statistics": {
+          name: "消费统计",
+          index: "statistics",
+          link: "/stat"
+        },
+      }
+    }
+  },
 
+  methods: {
+    handleSelect(index, indexPath) {
+      this.$router.push(this.menuItems[index].link)
+    },
+
+    toHome() {
+      this.$router.push("/home")
     }
   }
+
 }
 </script>
 
 <style scoped>
 .header {
-  width: 100%;
+  height: 70px;
+}
+
+.logo {
+  position: relative;
+  width: 150px;
   height: 60px;
+  top: 5px;
+  object-fit: contain;
 }
 
-.header-item {
-  width: 100%;
-  height: 60px;
+.logo:hover {
+  cursor: pointer;
 }
 
-.title {
-  line-height: 60px;
-  font-size: 42px;
-  font-weight: bolder;
-  font-family: Eighty-Eight;
+.navbar {
+  display: inline-block;
+  float: right;
+  font-size: 16px;
 }
 
-.header-item-nav, .header-item-more {
-  line-height: 60px;
+.navbar li {
+  height: 70px;
+  line-height: 70px;
+}
+
+.personal {
+  display: inline-block;
+  float: right;
+  width: 80px;
   text-align: center;
-  font-size: 32px;
 }
 
 .el-dropdown-link {
-  cursor: pointer;
+  height: 70px;
+  line-height: 70px;
+  font-size: 28px;
+
 }
 
 </style>

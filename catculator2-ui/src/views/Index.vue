@@ -1,6 +1,8 @@
 <template>
-  <el-container style="min-height: 100vh">
-    <el-header><Header></Header></el-header>
+  <el-container>
+    <el-header height="70px">
+      <Header></Header>
+    </el-header>
     <el-main>
       <router-view></router-view>
     </el-main>
@@ -19,17 +21,21 @@ export default {
 </script>
 
 <style scoped>
-.el-container {
-  background-color: #FFE5A8;
-}
+
 .el-header {
-  margin: 5vh 5vw 0 5vw;
-  padding: 0;
+  position: fixed;
+  width: 100%;
+  background: #ffffff;
+  color: #000000;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1;
 }
 
-.el-main {
-  margin: 0 5vw 5vh 5vw;
+.el-main{
+  position: relative;
+  background: #f9f9f9;
   padding: 0;
+  top: 70px;
+  min-height: calc(100vh - 70px);
 }
-
 </style>
