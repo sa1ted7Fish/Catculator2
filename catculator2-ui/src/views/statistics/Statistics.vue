@@ -1,6 +1,15 @@
 <template>
   <div class="main">
-    Stat Page...
+    <el-card>
+      <el-row>
+        <el-col :span="18">
+          
+        </el-col>
+        <el-col :span="6">
+
+        </el-col>
+      </el-row>
+    </el-card>
   </div>
 </template>
 
@@ -12,6 +21,6 @@ export default {
 
 <style scoped>
 .main {
-  padding: 30px;
+  padding: 50px 100px 50px 100px;
 }
 </style>

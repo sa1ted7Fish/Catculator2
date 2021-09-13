@@ -267,11 +267,11 @@ export default {
 }
 
 .days {
-  background-image: linear-gradient(120deg, #dfdfdf -10%, white 110%);
+  background-image: linear-gradient(120deg, #f2e8d9 -10%, white 110%);
 }
 
 .todo-list {
-  background-image: linear-gradient(120deg, #f2e8d9 -10%, white 110%);
+  background-image: linear-gradient(120deg, #dfdfdf -10%, white 110%);
 }
 
 .table {
